@@ -1,38 +1,57 @@
+
 .App {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  padding: 20px;
+  background-color: #f9fafb;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+h1 {
+  color: #1f2937;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  color: #374151;
+  margin-bottom: 1em;
+}
+
+input[type="text"] {
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+}
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.react-datepicker__input-container input {
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #3b82f6;
   color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #2563eb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.rbc-calendar {
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
 }
