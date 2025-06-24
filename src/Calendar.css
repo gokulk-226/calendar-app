@@ -1,0 +1,197 @@
+/* Main container */
+.app-container {
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+}
+
+/* Header */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.calendar-header h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #00ffff;
+}
+
+.calendar-header button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.calendar-header button:hover {
+  background-color: #00acc1;
+}
+
+/* Event Form */
+.event-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.event-form input,
+.event-form button {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #2d2d3a;
+  color: #f0f0f0;
+}
+
+.event-form input::placeholder {
+  color: #aaa;
+}
+
+.event-form input:focus {
+  border-color: #00bcd4;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.3);
+}
+
+.event-form button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.event-form button:hover {
+  background-color: #43a047;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.button-group button,
+.file-label {
+  padding: 8px 14px;
+  font-size: 14px;
+  background-color: #37474f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.file-label {
+  position: relative;
+  overflow: hidden;
+}
+
+.file-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+}
+
+.button-group .clear {
+  background-color: #d32f2f;
+}
+
+.button-group button:hover,
+.file-label:hover {
+  background-color: #546e7a;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+/* Calendar Cell */
+.day {
+  background: #292b3e;
+  border: 1px solid #3c3f4e;
+  padding: 10px;
+  min-height: 120px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.2s ease;
+}
+
+.day:hover {
+  background-color: #323449;
+}
+
+.day.header {
+  background-color: #373b56;
+  font-weight: 600;
+  text-align: center;
+  padding: 12px 0;
+  color: #00ffff;
+}
+
+.day.today {
+  border: 2px solid #00e676;
+  background-color: #1b2e28;
+}
+
+.day.faded {
+  background-color: #20222e;
+  color: #666;
+}
+
+.date-number {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #f8f8f8;
+}
+
+/* Events */
+.event-container {
+  margin-top: 4px;
+}
+
+.event {
+  background: #7c4dff;
+  color: white;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background 0.2s ease;
+}
+
+.event:hover {
+  background: #9575cd;
+}
+
+.event.conflict {
+  background: #f4511e;
+  border: 1px solid #d84315;
+}
