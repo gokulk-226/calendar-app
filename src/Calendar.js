@@ -50,18 +50,6 @@ function Calendar() {
   const hasConflict = (event, list) =>
     list.filter((e) => e.date === event.date && e.time === event.time).length > 1;
 
-  const exportEvents = () => {
-    const blob = new Blob([JSON.stringify(events, null, 2)], {
-      type: "application/json",
-    });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "calendar-export.json";
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
   const clearEvents = () => {
     localStorage.removeItem("calendar-events");
     setEvents([]);
@@ -78,16 +66,40 @@ function Calendar() {
 
       {/* Event Form */}
       <form onSubmit={handleAddEvent} className="event-form">
-        <input type="text" name="title" placeholder="Event Title" value={form.title} onChange={handleFormChange} required />
-        <input type="date" name="date" value={form.date} onChange={handleFormChange} required />
-        <input type="time" name="time" value={form.time} onChange={handleFormChange} required />
-        <input type="text" name="duration" placeholder="Duration (e.g. 1h)" value={form.duration} onChange={handleFormChange} />
+        <input
+          type="text"
+          name="title"
+          placeholder="Event Title"
+          value={form.title}
+          onChange={handleFormChange}
+          required
+        />
+        <input
+          type="date"
+          name="date"
+          value={form.date}
+          onChange={handleFormChange}
+          required
+        />
+        <input
+          type="time"
+          name="time"
+          value={form.time}
+          onChange={handleFormChange}
+          required
+        />
+        <input
+          type="text"
+          name="duration"
+          placeholder="Duration (e.g. 1h)"
+          value={form.duration}
+          onChange={handleFormChange}
+        />
         <button type="submit">Add Event</button>
       </form>
 
       {/* Controls */}
       <div className="button-group">
-        <button onClick={exportEvents}>Export Events</button>
         <button onClick={clearEvents} className="clear">Clear All</button>
       </div>
 
